@@ -326,7 +326,27 @@ selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_s
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 ```
+## 8. Paste the executing result of  'dpkg -S testing.sh; testing.sh'
 
+### Full output: dpkg -S testing.sh; testing.sh 
+
+```bash
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » dpkg -S testing.sh; testing.sh             
+hello: /usr/bin/testing.sh
+this is a test from Carles Solé Grau
+```
+
+### STDOUT: dpkg -S testing.sh 2> /dev/null; testing.sh 2> /dev/null
+```bash
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » dpkg -S testing.sh 2> /dev/null; testing.sh 2> /dev/null
+hello: /usr/bin/testing.sh
+```
+
+### STDERR: dpkg -S testing.sh > /dev/null; testing.sh > /dev/null
+```bash
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » dpkg -S testing.sh > /dev/null; testing.sh > /dev/null
+this is a test from Carles Solé Grau
+```
 
 
 
