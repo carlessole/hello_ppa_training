@@ -139,13 +139,13 @@ Build the `.deb` package following [Ubuntu - Build packages](https://canonical-u
     - [debuild - build a Debian package](https://manpages.ubuntu.com/manpages/plucky/en/man1/debuild.1.html)
     - [debuild - build a Debian package - Examples](https://manpages.ubuntu.com/manpages/plucky/en/man1/debuild.1.html#examples)
 
-    ```
+    ```bash
     debuild -i -us -uc -b
     ```
     `-us`and `-uc` to avoid signing sources and changes.
 
     Before running it, make sure `help2man` is installed on your system:
-    ```
+    ```bash
     sudo apt update
     sudo apt install help2man
     ```
@@ -160,17 +160,17 @@ If everything goes well, a `.deb` file should be generated one directory up.
 
     You should see the following printed in the terminal:
     `/usr/bin` has been used as in the installation path as the [reference example link provided](https://pastebin.ubuntu.com/p/hZ4sH647Jt/) points also there.
-    ```
+    ```bash
     this is a test from Carles Solé Grau
     ```
 
 4. After installation run:
-    ```
+    ```bash
     dpkg -S testing.sh; testing.sh
     ```
 
     Outuput should look like:
-    ```
+    ```bash
     hello: /usr/bin/testing.sh
     this is a test from Carles Solé Grau
     ```
@@ -194,7 +194,7 @@ Therefore, we have followed the necessary steps using various resources found on
 - [debchange - Tool for maintenance of the debian/changelog file in a source package](https://manpages.ubuntu.com/manpages/trusty/man1/debchange.1.html)
 
 The first step is to add a new entry to the `debian/changelog`. You can do this manually or use the [dch](https://manpages.ubuntu.com/manpages/trusty/man1/debchange.1.html) tool:
-```
+```bash
 dch -i
 ```
 
@@ -243,9 +243,26 @@ login = anonymous
 allow_unsigned_uploads = 0
 ```
 Then simply run:
-```
+```bash
 dput selrac-packaging-training ../hello_2.10-5ubuntuplucky2_source.changes
 ```
 
 After a short while, you should see a new Published Package appear in your Launchpad PPA.
+
+## 6. Install your package from your PPA
+In your Launchpad PPA, under the `Adding this PPA to your system` section, you will find the commands needed to add this PPA to your system.
+You can also read more about it in this guide:
+- [Add a Personal Package Archive (PPA)](https://help.ubuntu.com/stable/ubuntu-help/addremove-ppa.html.en)
+
+```bash
+sudo add-apt-repository ppa:selrac/packaging-training
+sudo apt update
+```
+
+After this, a new entry/file will be generated in `/etc/apt/sources.list.d/`
+
+```bash
+sudo apt install hello
+```
+
 
