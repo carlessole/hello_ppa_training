@@ -265,4 +265,68 @@ After this, a new entry/file will be generated in `/etc/apt/sources.list.d/`
 sudo apt install hello
 ```
 
+## 7. Paste the message printed during the installation via standard out (STDOUT)
+
+After each `install`, run:
+```bash
+sudo apt remove hello
+```
+This allows you to perform a complete installation each time.
+
+### Full output: sudo apt install hello
+
+```bash
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » sudo apt install hello
+Installing:                     
+  hello
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 0
+  Download size: 49,4 kB
+  Space needed: 276 kB / 226 GB available
+
+Get:1 https://ppa.launchpadcontent.net/selrac/packaging-training/ubuntu plucky/main amd64 hello amd64 2.10-5ubuntuplucky2 [49,4 kB]
+Fetched 49,4 kB in 0s (199 kB/s) 
+Selecting previously unselected package hello.
+(Reading database ... 342128 files and directories currently installed.)
+Preparing to unpack .../hello_2.10-5ubuntuplucky2_amd64.deb ...
+Unpacking hello (2.10-5ubuntuplucky2) ...
+Setting up hello (2.10-5ubuntuplucky2) ...
+this is a test from Carles Solé Grau
+Processing triggers for man-db (2.13.0-1) ...
+Processing triggers for install-info (7.1.1-1) ...
+```
+
+### STDOUT: sudo apt install hello 2> /dev/null
+```bash
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » sudo apt install hello 2> /dev/null 
+Installing:                     
+  hello
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 0
+  Download size: 49,4 kB
+  Space needed: 276 kB / 226 GB available
+
+Get:1 https://ppa.launchpadcontent.net/selrac/packaging-training/ubuntu plucky/main amd64 hello amd64 2.10-5ubuntuplucky2 [49,4 kB]
+Fetched 49,4 kB in 0s (202 kB/s) 
+Selecting previously unselected package hello.
+(Reading database ... 342128 files and directories currently installed.)
+Preparing to unpack .../hello_2.10-5ubuntuplucky2_amd64.deb ...
+Unpacking hello (2.10-5ubuntuplucky2) ...
+Setting up hello (2.10-5ubuntuplucky2) ...
+this is a test from Carles Solé Grau
+Processing triggers for man-db (2.13.0-1) ...
+Processing triggers for install-info (7.1.1-1) ...
+```
+
+### STDERR: sudo apt install hello > /dev/null
+```bash
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » sudo apt install hello > /dev/null
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+```
+
+
+
 
