@@ -57,3 +57,31 @@ git init
 ```
 
 From now on, try to commit each step individually for easier tracking and review.
+
+## 2. Add an executable bash script called "testing.sh"
+
+This script must output the following message to **standard error (STDERR)** when executed:
+
+```
+this is a test from Carles Solé Grau
+```
+
+Create a `testing.sh` file and place it in `debian` directory.
+This is because the `debian/` directory is the only location explicitly recognized by the Debian packaging system for defining what gets installed, where, and how: [Debian Policy Manual – Source Packages](https://www.debian.org/doc/debian-policy/ch-source.html)
+
+Add the following content to the script:
+
+```
+#!/bin/bash
+
+# Use '>&2' to redirect output to STDERR
+echo "this is a test from Carles Solé Grau" >&2
+```
+
+To verify that the message is correctly printed to STDERR, run the following command:
+```
+./debian/testing.sh > stdout.txt 2> stderr.txt
+```
+
+Then inspect the contents of stderr.txt to confirm the message was redirected properly.
+Remember to delete the temporary files (stdout.txt and stderr.txt) once you're done testing.
