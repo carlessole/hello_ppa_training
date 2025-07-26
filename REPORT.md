@@ -18,7 +18,7 @@ Pick an existing Debian package from the Ubuntu archive. The selected package sh
 ## 1. Download the source code of that Debian package
 
 1. Go to [Ubuntu Packages](https://packages.ubuntu.com/) and select your desired Ubuntu version.  
-    I am working on Ubuntu 25.4: [Plucky](https://packages.ubuntu.com/plucky/).
+    If working on Ubuntu 25.04: [Plucky](https://packages.ubuntu.com/plucky/).
 
 2. Choose a simple package to avoid overcomplicating the exercise.  
     [hello](https://packages.ubuntu.com/plucky/hello) is a good choice because it is an example package based on GNU Hello.
@@ -35,7 +35,7 @@ Pick an existing Debian package from the Ubuntu archive. The selected package sh
     - [How to get source code of package using the apt command on Debian or Ubuntu](https://www.cyberciti.biz/faq/how-to-get-source-code-of-package-using-the-apt-command-on-debian-or-ubuntu/)
 
     Feel free to use the method you are most comfortable with.  
-    For this exercise, I will use [pull-pkg](https://canonical-ubuntu-packaging-guide.readthedocs-hosted.com/en/latest/how-to/get-package-source/#pull-pkg), as described in the official guide.  
+    For this exercise, [pull-pkg](https://canonical-ubuntu-packaging-guide.readthedocs-hosted.com/en/latest/how-to/get-package-source/#pull-pkg) is used, as described in the link provided in the test assignment.  
 
     It is one of the simplest and fastest methods.
     ```bash
@@ -68,7 +68,8 @@ this is a test from Carles Solé Grau
 
 1. Create a `testing.sh` file and place it in the `debian` directory.
 
-    This is because the `debian/` directory is the standard location recognized by the Debian packaging system for defining what gets installed, where, and how. See: [Debian Policy Manual – Source Packages](https://www.debian.org/doc/debian-policy/ch-source.html)  
+    This is because the `debian/` directory is the standard location recognized by the Debian packaging system for defining what gets installed, where, and how.  
+    See: [Debian Policy Manual – Source Packages](https://www.debian.org/doc/debian-policy/ch-source.html)  
     Content of `debian/testing.sh`:
 
     ```bash
@@ -91,7 +92,7 @@ this is a test from Carles Solé Grau
     ```
 
     Then check `stderr.txt` to confirm the output.  
-    Don't forget to delete the temporary files after testing.
+    Don't forget to delete these temporary files after testing.
 
 4. To install this script on your system when installing the `.deb` package, add/edit the file `debian/install` with this line:
 
@@ -105,7 +106,7 @@ this is a test from Carles Solé Grau
 This message must be printed to **standard output (STDOUT)**, so `debian/testing.sh` can not be reused.
 
 1. Create a [maintainer script](https://www.debian.org/doc/debian-policy/ch-binary.html#prompting-in-maintainer-scripts) that runs during installation.  
-We will use the `postinst` script, which is executed after the package is installed.  
+`postinst` script is the used one, which is executed after the package is installed.  
 Create or edit `debian/postinst`:
 
     ```bash
@@ -138,7 +139,7 @@ Build the `.deb` package following [Ubuntu - Build packages](https://canonical-u
     sudo apt update
     sudo apt install sbuild debhelper ubuntu-dev-tools piuparts
     ```
-2. Since we just want to test the .deb package locally, we can use:
+2. Since .deb package is testet just locally, we can use:
     ```
     sbuild -c <RELEASE>-<ARCH>[-shm]
     ```
