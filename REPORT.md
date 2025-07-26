@@ -174,3 +174,7 @@ Outuput should look like:
 hello: /usr/bin/testing.sh
 this is a test from Carles Solé Grau
 ```
+
+## 4. Push all your changes to a public Git repository (e.g. Launchpad Git, GitHub, or GitLab)
+
+Choose your preferred Git provider and push all your changes there.
