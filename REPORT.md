@@ -1,5 +1,12 @@
 # Take Home Test from Canonical - Carles Solé Grau
 
+# 1. Git Repository
+- https://github.com/carlessole/hello_ppa_training.git
+
+# 2. Launchpad PPA
+- https://launchpad.net/~selrac/+archive/ubuntu/packaging-training
+
+# 3.Reference Guide
 
 An initial general reading of this tutorial helps to understand all the necessary steps to generate and publish a package to Launchpad PPA:
 - [Minimum Complete Example of Debian Packaging and Launchpad PPA (hellodeb)](https://metebalci.com/blog/a-minimum-complete-example-of-debian-packaging-and-launchpad-ppa-hellodeb/)
@@ -326,7 +333,7 @@ selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_s
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 ```
-## 8. Paste the executing result of  'dpkg -S testing.sh; testing.sh'
+## 8. Paste the executing result of 'dpkg -S testing.sh; testing.sh'
 
 ### Full output: dpkg -S testing.sh; testing.sh 
 
@@ -345,6 +352,39 @@ hello: /usr/bin/testing.sh
 ### STDERR: dpkg -S testing.sh > /dev/null; testing.sh > /dev/null
 ```bash
 selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » dpkg -S testing.sh > /dev/null; testing.sh > /dev/null
+this is a test from Carles Solé Grau
+```
+
+# 4. Output of the installation and testing.sh
+
+For more detailed output please take a look on:
+- [7. Paste the message printed during the installation via standard out (STDOUT)](#7-paste-the-message-printed-during-the-installation-via-standard-out-stdout)
+- [8. Paste the executing result of 'dpkg -S testing.sh; testing.sh'](#8-paste-the-executing-result-of-dpkg--s-testingsh-testingsh)
+
+Based on the [reference output link](https://pastebin.ubuntu.com/p/hZ4sH647Jt/):
+
+```bash
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » sudo apt install hello        
+Installing:                     
+  hello
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 0
+  Download size: 49,4 kB
+  Space needed: 276 kB / 226 GB available
+
+Get:1 https://ppa.launchpadcontent.net/selrac/packaging-training/ubuntu plucky/main amd64 hello amd64 2.10-5ubuntuplucky2 [49,4 kB]
+Fetched 49,4 kB in 0s (252 kB/s) 
+Selecting previously unselected package hello.
+(Reading database ... 342128 files and directories currently installed.)
+Preparing to unpack .../hello_2.10-5ubuntuplucky2_amd64.deb ...
+Unpacking hello (2.10-5ubuntuplucky2) ...
+Setting up hello (2.10-5ubuntuplucky2) ...
+this is a test from Carles Solé Grau
+Processing triggers for man-db (2.13.0-1) ...
+Processing triggers for install-info (7.1.1-1) ...
+selrac@carles-evert hello_ppa/hello-2.10 (feat/take_home_test_canonical_carles_sole_grau) » dpkg -S testing.sh; testing.sh
+hello: /usr/bin/testing.sh
 this is a test from Carles Solé Grau
 ```
 
