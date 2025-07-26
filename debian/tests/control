@@ -1,0 +1,5 @@
+Test-Command: hello
+
+Tests: upstream
+Depends: @, make
+Restrictions: build-needed, rw-build-tree, allow-stderr

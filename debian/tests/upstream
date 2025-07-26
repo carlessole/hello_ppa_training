@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+PROGRAMS="hello"
+for a in ${PROGRAMS}; do
+  ln -sf /usr/bin/${a} ${a}
+done
+make check-TESTS

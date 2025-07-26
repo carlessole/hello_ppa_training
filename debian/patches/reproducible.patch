@@ -1,0 +1,15 @@
+Description: Hardcode COPYRIGHT_YEAR to make the build reproducible
+Author: Santiago Vila <sanvila@debian.org>
+Last-Update: 2025-04-12
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -40,7 +40,7 @@
+ 
+ dnl Copyright will apply as long as these sources are in use, e.g., are
+ dnl being compiled, which is reasonable year to claim the copyright.
+-AC_DEFINE([COPYRIGHT_YEAR], [m4_esyscmd([date +%Y])], [year in copyright message])
++AC_DEFINE([COPYRIGHT_YEAR], [2025], [year in copyright message])
+ 
+ dnl Are we building from git checked-out sources, or a tarball ?
+ dnl This is used in "Makefile.am" to avoid re-generating the manpage
