@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+# Output to STDOUT ('>&1' is not needed in this case)
+echo "this is a test from Carles Solé Grau"
+
+# Hook for debhelper (even if not needed) to avoid a warning
+#DEBHELPER#
+
+exit 0
