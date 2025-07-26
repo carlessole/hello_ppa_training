@@ -1,3 +1,15 @@
+hello (2.10-5ubuntuplucky2) plucky; urgency=medium
+
+  * Target Ubuntu version is 'plucky' 
+
+ -- Carles Sole Grau <selrac@carles-evert>  Sat, 26 Jul 2025 22:45:54 +0200
+
+hello (2.10-5selracnoble1) noble; urgency=medium
+
+  * Install 'testing.sh' in '/usr/bin' and throw to STDOUT a prompt message during installation
+
+ -- Carles Sole Grau <carlessg11@gmail.com>  Sat, 26 Jul 2025 21:59:05 +0200
+
 hello (2.10-5) unstable; urgency=medium
 
   * Add autopkgtest dependency on make. Closes: #1103293.
