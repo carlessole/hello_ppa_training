@@ -1,10 +1,10 @@
 # Take Home Test from Canonical - Carles Solé Grau
 
 # 1. Git Repository
-- https://github.com/carlessole/hello_ppa_training.git
+- [https://github.com/carlessole/hello_ppa_training.git](https://github.com/carlessole/hello_ppa_training.git)
 
 # 2. Launchpad PPA
-- https://launchpad.net/~selrac/+archive/ubuntu/packaging-training
+- [https://launchpad.net/~selrac/+archive/ubuntu/packaging-training](https://launchpad.net/~selrac/+archive/ubuntu/packaging-training)
 
 # 3.Reference Guide
 
@@ -144,6 +144,7 @@ Build the `.deb` package following [Ubuntu - Build packages](https://canonical-u
     sbuild -c <RELEASE>-<ARCH>[-shm]
     ```
     However, I had some issues with this tool, so I ended up using `debuild` instead:
+    - [Building with debuild](https://canonical-ubuntu-packaging-guide.readthedocs-hosted.com/en/latest/how-to/build-packages/#building-with-debuild)
     - [debuild - build a Debian package](https://manpages.ubuntu.com/manpages/plucky/en/man1/debuild.1.html)
     - [debuild - build a Debian package - Examples](https://manpages.ubuntu.com/manpages/plucky/en/man1/debuild.1.html#examples)
 
@@ -182,6 +183,12 @@ If everything goes well, a `.deb` file should be generated one directory up.
     hello: /usr/bin/testing.sh
     this is a test from Carles Solé Grau
     ```
+5. Remove the installed package from the system
+    ```bash
+    sudo apt remove hello
+    ```
+    This will uninstall the `hello` package from your system.
+
 
 ## 4. Push all your changes to a public Git repository (e.g. Launchpad Git, GitHub, or GitLab)
 
@@ -190,8 +197,8 @@ Choose your preferred Git provider and push all your changes there.
 ## 5. Upload (dput) the source change to your PPA on the Launchpad
 
 The provided links:
-- https://canonical-ubuntu-packaging-guide.readthedocs-hosted.com/en/latest/how-to/upload-packages-to-ppa/
-- https://github.com/canonical/ubuntu-packaging-guide/blob/2.0-preview/docs/how-to/upload-packages-to-ppa.rst
+- [https://canonical-ubuntu-packaging-guide.readthedocs-hosted.com/en/latest/how-to/upload-packages-to-ppa/](https://canonical-ubuntu-packaging-guide.readthedocs-hosted.com/en/latest/how-to/upload-packages-to-ppa/)
+- [https://github.com/canonical/ubuntu-packaging-guide/blob/2.0-preview/docs/how-to/upload-packages-to-ppa.rst](https://github.com/canonical/ubuntu-packaging-guide/blob/2.0-preview/docs/how-to/upload-packages-to-ppa.rst)
 
 It appears that the official documentation page for uploading a package to a Launchpad PPA is still under construction.
 Therefore, we have followed the necessary steps using various resources found online.
